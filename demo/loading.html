@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Loading</title>
+    <!-- Page settings -->
+    <meta charset="utf-8" />
+    <!-- Load modules -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText3.min.js"></script>
+    <!-- Load style -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+      .loading-wrapper {
+        font-size: 7vw;
+        font-family: 'Merriweather', serif;
+        letter-spacing: 10px;
+        & .title {
+          padding: 0 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loadingWrapper" class="loading-wrapper bg-body-secondary">
+      <div
+        id="loadingText"
+        class="container d-flex justify-content-center text-start"
+      >
+        <div id="tasty" class="title">Tasty</div>
+        <div id="water" class="title">Water</div>
+        <div id="in" class="title">in</div>
+        <div id="japan" class="title">Japan</div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    gsap.registerPlugin(SplitText);
+    [t, w, i, j] = document.querySelectorAll('.loading-wrapper .title');
+
+    // initialize
+
+    // split text
+    var splitTasty = new SplitText('#tasty', { type: 'chars' });
+    var splitWater = new SplitText('#water', { type: 'chars' });
+    var splitIn = new SplitText('#in', { type: 'chars' });
+    var splitJapan = new SplitText('#japan', { type: 'chars' });
+    // opacity
+    gsap.set(splitTasty.chars.slice(1), { opacity: 0 });
+    gsap.set(splitWater.chars.slice(1), { opacity: 0 });
+    gsap.set(splitIn.chars, { opacity: 0 });
+    gsap.set(splitJapan.chars.slice(1), { opacity: 0 });
+    // position
+    gsap.set(t, { x: 320 });
+    gsap.set(w, { x: 130 });
+    gsap.set(j, { x: -170 });
+    gsap.set('#loadingWrapper', { height: '100vh' });
+
+    const tl1 = () => {
+      let tl = gsap.timeline();
+      tl.to('#loadingText', { y: 500 }, '<');
+      tl.to([t, w, j], { x: 0, ease: 'power2.out' });
+      tl.to(splitTasty.chars.slice(1), { opacity: 1, stagger: 0.1 });
+      tl.to(splitWater.chars.slice(1), { opacity: 1, stagger: 0.1 }, '<');
+      tl.to(splitJapan.chars.slice(1), { opacity: 1, stagger: 0.1 }, '<');
+      tl.to(splitIn.chars, { opacity: 1 });
+      tl.to('#loadingText', { y: -200 });
+      tl.to('#loadingWrapper', { height: '0px' }, '<');
+    };
+
+    window.onload = () => {
+      tl1();
+    };
+  </script>
+</html>
