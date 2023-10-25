@@ -50,7 +50,7 @@
                 <img
                   id="contentImage2"
                   class="this-img"
-                  src="./images/top.jpg"
+                  src="./images/about-wasabi.jpg"
                 />
               </div>
             </div>
