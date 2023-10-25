@@ -55,7 +55,7 @@
       </nav>
       <router-view></router-view>
     </div>
-    <div id="loadingWrapper" class="loading-wrapper">
+    <!-- <div id="loadingWrapper" class="loading-wrapper">
       <div
         id="loadingText"
         class="container d-flex justify-content-center text-start"
@@ -65,7 +65,7 @@
         <div id="in" class="title">in</div>
         <div id="japan" class="title">Japan</div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -136,6 +136,7 @@ module.exports = {
     },
   },
   mounted() {
+    /*
     gsap.registerPlugin(SplitText);
     [t, w, i, j] = document.querySelectorAll('.loading-wrapper .title');
 
@@ -172,6 +173,7 @@ module.exports = {
     window.onload = () => {
       tl1();
     };
+    */
   },
 };
 </script>
