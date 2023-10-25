@@ -12,6 +12,6 @@ sudo /usr/sbin/apachectl start
 ```
 
 ### deploy page
-https://peaceful-smakager-f94ade.netlify.app/#/gallery
+https://peaceful-smakager-f94ade.netlify.app
 
 ### preview
