@@ -5,8 +5,13 @@
 - Bootstrap5
 - GSAP
 
-### Run
+### run server
 
 ```bash
 sudo /usr/sbin/apachectl start
 ```
+
+### deploy page
+https://peaceful-smakager-f94ade.netlify.app/#/gallery
+
+### preview
