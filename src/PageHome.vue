@@ -45,5 +45,9 @@ module.exports = {
   data() {
     return {};
   },
+  mounted() {
+    gsap.set('.catchphrase', { opacity: 0 });
+    gsap.to('.catchphrase', { opacity: 1, duration: 2 });
+  },
 };
 </script>

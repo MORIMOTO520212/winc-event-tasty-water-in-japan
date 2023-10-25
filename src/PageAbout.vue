@@ -75,7 +75,11 @@
             </div>
           </div>
           <div class="col-sm-6 order-sm-first">
-            <img id="contentImage3" class="this-img" src="./images/top.jpg" />
+            <img
+              id="contentImage3"
+              class="this-img"
+              src="./images/about-ootaki.jpg"
+            />
           </div>
         </div>
       </div>
@@ -115,6 +119,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 20px;
   }
 
   & .this-content-title {

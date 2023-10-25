@@ -1,7 +1,7 @@
 <template>
-  <div id="pageWrapper">
+  <div id="pageWrapper" class="overflow-hidden">
     <div class="gallery row vh-100">
-      <div class="col-sm">
+      <div class="col-sm gx-0">
         <div class="grid">
           <div></div>
           <div id="galleryImage">

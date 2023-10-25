@@ -26,6 +26,7 @@
           >
             <div class="navbar-nav">
               <div
+                class="my-1"
                 v-on:click="router.push('about')"
                 v-on:mouseover="navBtnOver($event)"
                 v-on:mouseout="navBtnOut($event)"
@@ -38,6 +39,7 @@
                 About
               </div>
               <div
+                class="my-1"
                 v-on:click="router.push('gallery')"
                 v-on:mouseover="navBtnOver($event)"
                 v-on:mouseout="navBtnOut($event)"
