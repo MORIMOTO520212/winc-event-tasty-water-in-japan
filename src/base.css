@@ -14,6 +14,7 @@ body {
 
 .router-wrapper {
   font-size: 1.6rem;
+  letter-spacing: calc(1.6rem * 0.05);
 }
 
 #pageWrapper {
@@ -34,8 +35,20 @@ body {
   letter-spacing: calc(2rem * 0.05);
 }
 
-@media screen and (max-width: 760px) {
+.fs-3rem {
+  font-size: 3rem;
+  letter-spacing: calc(3rem * 0.05);
+}
+
+/* breakpoint md */
+@media screen and (max-width: 768px) {
   html {
     font-size: 8px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .position-md-static {
+    position: static !important;
   }
 }

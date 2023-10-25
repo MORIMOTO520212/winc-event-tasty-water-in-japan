@@ -5,6 +5,7 @@
         <div class="container-fluid">
           <span
             class="navbar-brand mb-0"
+            v-on:click="router.push('/')"
             v-bind:style="location.hash === '#/' ? 'color:#fff' : 'color:#000'"
             >TWJ</span
           >
@@ -56,6 +57,39 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.navbar {
+  font-family: 'Merriweather', serif;
+  letter-spacing: 10px;
+  padding: 8px 30px;
+  z-index: 1000;
+}
+
+.navbar-nav {
+  letter-spacing: 5px;
+}
+
+.navbar-nav div {
+  color: #fff;
+  border: solid 1px #fff;
+  border-radius: 50px;
+  padding: 5px 15px;
+  margin: 0 10px;
+  cursor: pointer;
+  background: linear-gradient(0deg, rgb(0 0 0 / 100%) 0%, rgb(0 0 0 / 0%) 0%);
+}
+
+.navbar-nav div:hover {
+  color: #fff !important;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+</style>
 
 <script>
 module.exports = {

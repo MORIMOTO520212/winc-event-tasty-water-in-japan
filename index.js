@@ -19,6 +19,14 @@ const router = new VueRouter({
   ],
 });
 
+const app = new Vue({
+  el: '#app',
+  components: {
+    'app-vue': httpVueLoader('./src/App.vue'),
+  },
+  router,
+});
+
 /* Animation of screen transitions */
 router.beforeEach((to, from, next) => {
   const tl = gsap.timeline();
@@ -32,12 +40,4 @@ router.beforeEach((to, from, next) => {
     duration: 0.5,
     opacity: 1,
   });
-});
-
-const app = new Vue({
-  el: '#app',
-  components: {
-    'app-vue': httpVueLoader('./src/App.vue'),
-  },
-  router,
 });
